@@ -1,0 +1,9 @@
+For my essay exploring example tools used for linting, testing, and building in a Continuous Integration setup, I chose the C# language.
+
+Linting tools commonly employed in C# include StyleCop, ReSharper, and FxCop, which analyze code for errors, enforce coding standards, and provide suggestions for improvement. For testing, frameworks such as NUnit, xUnit.net, and MSTest offer comprehensive unit testing capabilities, including test discovery, assertion libraries, and support for parameterized and data-driven tests. The building process in C# often involves leveraging tools like MSBuild, NuGet, and Cake to compile source code, manage dependencies, and create distributable packages.
+
+As for establishing CI pipelines, there are many alternatives to JS tools likes Jenkins and GitHub Actions in the C# ecosystem. Notable options include Azure DevOps, TeamCity, GitLab CI/CD, AppVeyor, and Bamboo. These alternatives provide a range of features, integrations, and deployment options to cater to diverse project requirements and preferences.
+
+When it comes to the decision between a self-hosted or cloud-based environment for the CI setup, self-hosted environments offer greater control and customization but require more setup and maintenance efforts. On the other hand, cloud-based services like Azure Pipelines, AWS CodePipeline, and Google Cloud Build provide ease of setup, scalability, and flexibility. Factors such as project size, available resources, security/compliance requirements, and budget considerations are crucial in determining the most suitable option for the specific project or team.
+
+Since the team is only made up of 6 developers and the project is about to be released soon, a cloud-based setup is what makes the most sense since it requires the least amount of effort. Effort that would be better spent working on the project instead of the pipeline.
