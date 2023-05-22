@@ -11,7 +11,8 @@ app.get("/version", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.send("ok").status(200);
+  throw "error";
+  // res.send("ok").status(200);
 });
 
 app.listen(PORT, () => {
