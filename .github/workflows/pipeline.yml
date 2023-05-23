@@ -38,7 +38,7 @@ jobs:
         with:
           severity: info
           details: |
-            Successful deployment of: ${{ github.event.head_commit.url }}
+            Successful deployment of: ${{ github.event.commits[0].message }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Notify on Failure
         uses: rjstone/discord-webhook-notify@v1
@@ -46,7 +46,7 @@ jobs:
         with:
           severity: error
           details: |
-            Build failed for commit: ${{ github.event.head_commit.url }} by ${{ github.event.head_commit.committer.name }}
+            Build failed for commit: ${{ github.event.commits[0].message }} by ${{ github.event.head_commit.committer.name }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_relese:
     needs: [simple_deployment_pipeline]
