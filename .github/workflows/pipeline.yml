@@ -12,7 +12,6 @@ on:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
-    if: ${{ github.event_name == 'push' }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -31,5 +30,6 @@ jobs:
           build: npm run build
           start: npm run start-prod
           wait-on: "http://localhost:5000"
-      - name: Trigger deployment
+      - name: Trigger deployment if this is a push to master
+        if: ${{ github.event_name == 'push' }}
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
