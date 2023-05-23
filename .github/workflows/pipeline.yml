@@ -48,7 +48,7 @@ jobs:
           details: |
             Build failed for commit: ${{ github.event.commits[0].message }} by ${{ github.event.head_commit.committer.name }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-  tag_relese:
+  tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '#skip') }}
